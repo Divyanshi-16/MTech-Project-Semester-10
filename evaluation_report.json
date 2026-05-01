@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-03-18T07:05:52.111320",
+  "session_id": "5ba65b45-efda-4307-a478-52697d5ea00a",
+  "model": "llama-3.3-70b-versatile",
+  "pass_threshold": 0.55,
+  "memory_stats": {
+    "working_memory_entries": 10,
+    "episodic_memory_episodes": 10,
+    "semantic_memory_chunks": 32
+  },
+  "benchmark_results": [
+    {
+      "source": "The doctor advised me to rest for a week.",
+      "reference": "डॉक्टर ने मुझे एक हफ्ते तक आराम करने की सलाह दी।",
+      "translation": "डॉक्टर ने मुझे एक सप्ताह के लिए आराम करने की सलाह दी।",
+      "final_scores": {
+        "bleu": 53.11,
+        "chrf": 73.93,
+        "bert_score_f1": 0.9454,
+        "comet": 0.9657,
+        "aggregate": 0.8161
+      },
+      "iterations": 1,
+      "score_history": [
+        {
+          "bleu": 53.11,
+          "chrf": 73.93,
+          "bert_score_f1": 0.9454,
+          "comet": 0.9657,
+          "aggregate": 0.8161
+        }
+      ]
+    },
+    {
+      "source": "Children learn best through play and exploration.",
+      "reference": "बच्चे खेल और अन्वेषण के माध्यम से सबसे अच्छा सीखते हैं।",
+      "translation": "बच्चे खेल और अन्वेषण के माध्यम से सबसे अच्छी तरह से सीखते हैं।",
+      "final_scores": {
+        "bleu": 61.15,
+        "chrf": 89.48,
+        "bert_score_f1": 0.9637,
+        "comet": 0.9774,
+        "aggregate": 0.8795
+      },
+      "iterations": 1,
+      "score_history": [
+        {
+          "bleu": 61.15,
+          "chrf": 89.48,
+          "bert_score_f1": 0.9637,
+          "comet": 0.9774,
+          "aggregate": 0.8795
+        }
+      ]
+    },
+    {
+      "source": "Please call me back when you are free.",
+      "reference": "जब आप फ्री हों तो कृपया मुझे वापस कॉल करें।",
+      "translation": "कृपया जब आप स्वतंत्र हों तो मुझे फोन करें।",
+      "final_scores": {
+        "bleu": 13.88,
+        "chrf": 36.57,
+        "bert_score_f1": 0.9019,
+        "comet": 0.98,
+        "aggregate": 0.6348
+      },
+      "iterations": 1,
+      "score_history": [
+        {
+          "bleu": 13.88,
+          "chrf": 36.57,
+          "bert_score_f1": 0.9019,
+          "comet": 0.98,
+          "aggregate": 0.6348
+        }
+      ]
+    }
+  ]
+}

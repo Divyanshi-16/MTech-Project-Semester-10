@@ -1,0 +1,312 @@
+{
+  "timestamp": "2026-04-24T07:20:46.794526",
+  "session_id": "8d7da43b-774c-4848-8a34-9c3b77c9e78c",
+  "model": "llama-3.3-70b-versatile",
+  "version": "V2",
+  "directions": [
+    "NLP Enrichment",
+    "Knowledge Graph",
+    "Multi-Agent MCP",
+    "Low-Resource Back-Translation"
+  ],
+  "memory_stats": {
+    "working_entries": 8,
+    "episodic_episodes": 13,
+    "semantic_chunks": 42,
+    "kg_nodes": 71,
+    "kg_edges": 30
+  },
+  "mcp_tools": [
+    "extract_entities",
+    "extract_temporal_expressions",
+    "query_knowledge_graph",
+    "translate_to_hindi",
+    "evaluate_translation",
+    "generate_feedback",
+    "update_memory"
+  ],
+  "benchmark": [
+    {
+      "source": "Narendra Modi addressed Parliament of India yesterday morning.",
+      "category": "entity+temporal",
+      "reference": "नरेंद्र मोदी ने कल सुबह भारतीय संसद को संबोधित किया।",
+      "translation": "नरेंद्र मोदी ने कल सुबह भारतीय संसद को संबोधित किया।",
+      "final_scores": {
+        "bleu": 100.0,
+        "chrf": 100.0,
+        "bert_score_f1": 1.0,
+        "comet": 0.9904,
+        "aggregate": 0.9976
+      },
+      "iterations": 1,
+      "entities": [
+        {
+          "text": "Narendra Modi",
+          "type": "PERSON",
+          "start": 0,
+          "end": 13,
+          "hindi": "नरेंद्र मोदी",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "Parliament of India",
+          "type": "ORG",
+          "start": 24,
+          "end": 43,
+          "hindi": "भारतीय संसद",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "yesterday morning",
+          "type": "TIME",
+          "start": 44,
+          "end": 61,
+          "hindi": "",
+          "dbpedia_uri": ""
+        }
+      ],
+      "temporal": [
+        {
+          "text": "yesterday",
+          "type": "DATE",
+          "value": "yesterday",
+          "hindi": "कल"
+        },
+        {
+          "text": "morning",
+          "type": "TIME",
+          "value": "morning",
+          "hindi": "सुबह"
+        }
+      ],
+      "kg_facts_count": 2,
+      "agent_trace": [
+        "input_node",
+        "enrichment_node",
+        "kg_node",
+        "embedding_node",
+        "translation_node_iter1",
+        "evaluator_node",
+        "feedback_node",
+        "memory_update_node"
+      ]
+    },
+    {
+      "source": "The Reserve Bank of India will review interest rates next month.",
+      "category": "entity+temporal",
+      "reference": "भारतीय रिज़र्व बैंक अगले महीने ब्याज दरों की समीक्षा करेगा।",
+      "translation": "रिज़र्व बैंक ऑफ़ इंडिया अगले महीने ब्याज दरों की समीक्षा करेगा।",
+      "final_scores": {
+        "bleu": 63.16,
+        "chrf": 81.59,
+        "bert_score_f1": 0.9661,
+        "comet": 0.9744,
+        "aggregate": 0.8637
+      },
+      "iterations": 1,
+      "entities": [
+        {
+          "text": "The Reserve Bank of India",
+          "type": "ORG",
+          "start": 0,
+          "end": 25,
+          "hindi": "",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "next month",
+          "type": "DATE",
+          "start": 53,
+          "end": 63,
+          "hindi": "",
+          "dbpedia_uri": ""
+        }
+      ],
+      "temporal": [
+        {
+          "text": "next month",
+          "type": "DATE",
+          "value": "next month",
+          "hindi": "अगले महीने"
+        }
+      ],
+      "kg_facts_count": 0,
+      "agent_trace": [
+        "input_node",
+        "enrichment_node",
+        "kg_node",
+        "embedding_node",
+        "translation_node_iter1",
+        "evaluator_node",
+        "feedback_node",
+        "memory_update_node"
+      ]
+    },
+    {
+      "source": "Sachin Tendulkar broke the ice at the press conference last evening.",
+      "category": "idiom+entity",
+      "reference": "सचिन तेंदुलकर ने कल शाम प्रेस कॉन्फ्रेंस में बात की शुरुआत की।",
+      "translation": "सचिन तेंदुलकर ने कल शाम प्रेस कॉन्फ़्रेंस में बर्फ तोड़ दी।",
+      "final_scores": {
+        "bleu": 43.82,
+        "chrf": 70.09,
+        "bert_score_f1": 0.9203,
+        "comet": 0.8334,
+        "aggregate": 0.7473
+      },
+      "iterations": 1,
+      "entities": [
+        {
+          "text": "Sachin Tendulkar",
+          "type": "PERSON",
+          "start": 0,
+          "end": 16,
+          "hindi": "सचिन तेंदुलकर",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "last evening",
+          "type": "TIME",
+          "start": 55,
+          "end": 67,
+          "hindi": "",
+          "dbpedia_uri": ""
+        }
+      ],
+      "temporal": [
+        {
+          "text": "evening",
+          "type": "TIME",
+          "value": "evening",
+          "hindi": "शाम"
+        }
+      ],
+      "kg_facts_count": 1,
+      "agent_trace": [
+        "input_node",
+        "enrichment_node",
+        "kg_node",
+        "embedding_node",
+        "translation_node_iter1",
+        "evaluator_node",
+        "feedback_node",
+        "memory_update_node"
+      ]
+    },
+    {
+      "source": "Please submit your application to the Income Tax Department by tomorrow.",
+      "category": "formal+temporal",
+      "reference": "कृपया कल तक आयकर विभाग को अपना आवेदन जमा करें।",
+      "translation": "कृपया अपना आवेदन आयकर विभाग को कल तक जमा करें।",
+      "final_scores": {
+        "bleu": 26.54,
+        "chrf": 70.48,
+        "bert_score_f1": 0.9242,
+        "comet": 0.9816,
+        "aggregate": 0.7519
+      },
+      "iterations": 1,
+      "entities": [
+        {
+          "text": "the Income Tax Department",
+          "type": "ORG",
+          "start": 34,
+          "end": 59,
+          "hindi": "",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "tomorrow",
+          "type": "DATE",
+          "start": 63,
+          "end": 71,
+          "hindi": "",
+          "dbpedia_uri": ""
+        }
+      ],
+      "temporal": [
+        {
+          "text": "tomorrow",
+          "type": "DATE",
+          "value": "tomorrow",
+          "hindi": "कल"
+        }
+      ],
+      "kg_facts_count": 0,
+      "agent_trace": [
+        "input_node",
+        "enrichment_node",
+        "kg_node",
+        "embedding_node",
+        "translation_node_iter1",
+        "evaluator_node",
+        "feedback_node",
+        "memory_update_node"
+      ]
+    },
+    {
+      "source": "ISRO launched a satellite from the Bengaluru facility this morning.",
+      "category": "entity+technical",
+      "reference": "इसरो ने आज सुबह बेंगलुरु सुविधा से एक उपग्रह लॉन्च किया।",
+      "translation": "इसरो ने बेंगलुरु सुविधा से इस सुबह एक उपग्रह प्रक्षेपित किया।",
+      "final_scores": {
+        "bleu": 21.83,
+        "chrf": 59.65,
+        "bert_score_f1": 0.9039,
+        "comet": 0.9425,
+        "aggregate": 0.6996
+      },
+      "iterations": 1,
+      "entities": [
+        {
+          "text": "ISRO",
+          "type": "ORG",
+          "start": 0,
+          "end": 4,
+          "hindi": "इसरो",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "Bengaluru",
+          "type": "GPE",
+          "start": 35,
+          "end": 44,
+          "hindi": "बेंगलुरु",
+          "dbpedia_uri": ""
+        },
+        {
+          "text": "this morning",
+          "type": "TIME",
+          "start": 54,
+          "end": 66,
+          "hindi": "",
+          "dbpedia_uri": ""
+        }
+      ],
+      "temporal": [
+        {
+          "text": "morning",
+          "type": "TIME",
+          "value": "morning",
+          "hindi": "सुबह"
+        }
+      ],
+      "kg_facts_count": 2,
+      "agent_trace": [
+        "input_node",
+        "enrichment_node",
+        "kg_node",
+        "embedding_node",
+        "translation_node_iter1",
+        "evaluator_node",
+        "feedback_node",
+        "memory_update_node"
+      ]
+    }
+  ],
+  "summary": {
+    "mean_aggregate": 0.812,
+    "mean_bertscore": 0.943,
+    "mean_iterations": 1.0
+  }
+}
